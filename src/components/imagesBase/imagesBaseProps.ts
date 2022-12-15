@@ -1,4 +1,4 @@
-export const ImagesProps = {
+export const ImagesBaseProps = {
     alt: {
         type: String,
         required: true
