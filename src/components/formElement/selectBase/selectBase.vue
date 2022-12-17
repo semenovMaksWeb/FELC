@@ -1,9 +1,9 @@
 <template>
     <div class="select" :id="id">
-        <input @input="inputValue" :value="value?.value" type="text" @focus="visibleTrue">
+        <input @input="inputValue" :value="values?.value" type="text" @focus="visibleTrue">
         <div class="wrapper-option" v-if="visible">
             <OptionBase 
-                :value="value"
+                :value="values"
                 @value="valueSave"
                 v-for="elem of list" 
                 :key="elem.id" 
@@ -19,6 +19,7 @@ import { OptionBaseType } from "./optionBase/optionBaseType";
 import { SelectBase } from './selectBase';
 export default {
     name: "selectBase",
+    emits: ["value"],
     components: { OptionBase },
     props:{
         list: {
@@ -29,15 +30,15 @@ export default {
             type: String,
             required: true
         },
-        values:{
+        values: {
             type: Object as PropType<OptionBaseType>,
             required: true
         }
     },
-    setup(props){
+    setup(props, {emit}) {
         const { id, list, values } = toRefs(props);
         return {
-            ...SelectBase(id, list, values)
+            ...SelectBase(id, list, values, emit)
         }
     }
 }

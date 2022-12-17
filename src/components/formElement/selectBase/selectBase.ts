@@ -1,7 +1,7 @@
-import { Ref, ref, watch } from "vue"
+import { Ref, ref } from "vue"
 import { OptionBaseType } from "./optionBase/optionBaseType";
 
-export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>, values:Ref<OptionBaseType>){
+export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>, values:Ref<OptionBaseType>, emit:any) {
     /** ВИДИМОСТЬ */
     const visible = ref(false);
     
@@ -17,37 +17,29 @@ export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>, values:R
     }
     
     /** Значения */
-    const value: Ref<OptionBaseType> = ref(values.value ? values.value : {}); 
 
-    /** отслеживание изменения пропса */
-    watch( ()=>{
-        return values.value
-    }, () => {
-        value.value = values.value;
-    });
-
-    const valueSave = (valueNews: OptionBaseType)=>{  
-        value.value = valueNews;
+    const valueSave = (valueNews: OptionBaseType) => { 
+        emit("value", valueNews);
         visibleFalse();
     }
 
-    const inputValue = (event:any) => {       
-        value.value = {
+    const inputValue = (event:any) => {    
+        emit("value", {
             id: undefined,
             value: event.target.value
-        }        
+        });      
     }
 
     const resetValue = () => {
-        value.value = {
+        emit("value", {
             id: undefined,
             value: undefined
-        }
+        });
     }
 
     const validateValueClose = ()=>{
-        if(!value.value.id && value.value.value){
-            const filter = list.value.filter((e: OptionBaseType) => e.value === value.value.value)[0];
+        if(!values.value.id && values.value.value) {
+            const filter = list.value.filter((e: OptionBaseType) => e.value === values.value.value)[0];
             if(!filter) {
                 resetValue();
             } else {
@@ -71,12 +63,10 @@ export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>, values:R
         }            
     }
 
-
     return {
         visible,
         visibleTrue,
  
-        value,
         valueSave,
         inputValue
     }
