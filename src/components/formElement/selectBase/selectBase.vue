@@ -29,11 +29,15 @@ export default {
             type: String,
             required: true
         },
+        values:{
+            type: Object as PropType<OptionBaseType>,
+            required: true
+        }
     },
     setup(props){
-        const { id, list } = toRefs(props);
+        const { id, list, values } = toRefs(props);
         return {
-            ...SelectBase(id, list)
+            ...SelectBase(id, list, values)
         }
     }
 }

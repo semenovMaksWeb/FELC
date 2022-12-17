@@ -1,7 +1,7 @@
-import { Ref, ref } from "vue"
+import { Ref, ref, watch } from "vue"
 import { OptionBaseType } from "./optionBase/optionBaseType";
 
-export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>){
+export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>, values:Ref<OptionBaseType>){
     /** ВИДИМОСТЬ */
     const visible = ref(false);
     
@@ -17,7 +17,15 @@ export function SelectBase(id: Ref<String>, list:Ref<OptionBaseType[]>){
     }
     
     /** Значения */
-    const value: Ref<OptionBaseType> = ref({}); 
+    const value: Ref<OptionBaseType> = ref(values.value ? values.value : {}); 
+
+    /** отслеживание изменения пропса */
+    watch( ()=>{
+        return values.value
+    }, () => {
+        value.value = values.value;
+    });
+
     const valueSave = (valueNews: OptionBaseType)=>{  
         value.value = valueNews;
         visibleFalse();
