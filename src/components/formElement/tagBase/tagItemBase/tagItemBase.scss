@@ -1,0 +1,28 @@
+.tag-item {
+    --tag-item-border: 1px solid #555;
+    --tag-item-margin: 0 5px 3px 0;
+
+    border: var(--tag-item-border);
+    margin: var(--tag-item-margin);
+
+    position: relative;
+}
+
+.tag-item-close {
+    display: none;
+    cursor: pointer;
+
+    color: red;
+    font-size: 8px;
+
+    border: 1px solid red;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 2px;
+    top: 1px;
+}
+
+.tag-item:hover .tag-item-close {
+    display:block;
+}

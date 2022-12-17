@@ -1,0 +1,9 @@
+.tag{
+    --border-tag: 1px solid #555;
+    outline: var(--border-tag);
+}
+
+.tag-container{
+    display: flex;
+    flex-wrap: wrap;
+}
