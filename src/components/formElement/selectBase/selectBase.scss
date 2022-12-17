@@ -1,0 +1,19 @@
+.select{
+    --wrapper-option-border: 1px solid #555;
+    --wrapper-option-width: 99%;
+    --wrapper-option-bg: #fff;
+    --wrapper-option-radius: 3px;
+
+    position: relative;
+}
+.wrapper-option {
+    position: absolute;
+    z-index: 5;
+
+    width: var(--wrapper-option-width);
+
+    background: var(--wrapper-option-bg);
+    outline: var(--wrapper-option-border);
+    border-radius: var(--wrapper-option-radius);
+
+}

@@ -1,0 +1,11 @@
+.option{
+    --option-bg: #bcb9b9;
+    --option-padding: 0 5px;
+
+    cursor: pointer;
+    padding: var(--option-padding);
+
+    &:hover, &.active{ 
+        background-color: var(--option-bg);
+    }
+}
