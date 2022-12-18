@@ -9,7 +9,7 @@ import imgBase from "./imgBase/imgBase.vue";
 import SvgBase from "./svgBase/svgBase.vue";
 
 export default {
-  name: "imagesBase",
+  name: "ImagesBase",
   components: { SvgBase, imgBase },
   props: {
     ...ImagesBaseProps,

@@ -15,7 +15,7 @@
 
 <script lang="ts">
 export default {
-  name: "checkboxBase",
+  name: "CheckboxBase",
   props:{
     id: {
       type: String

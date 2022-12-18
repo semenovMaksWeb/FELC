@@ -18,7 +18,7 @@ import OptionBase from './optionBase/optionBase.vue';
 import { OptionBaseType } from "./optionBase/optionBaseType";
 import { SelectBase } from './selectBase';
 export default {
-    name: "selectBase",
+    name: "SelectBase",
     emits: ["value"],
     components: { OptionBase },
     props:{
