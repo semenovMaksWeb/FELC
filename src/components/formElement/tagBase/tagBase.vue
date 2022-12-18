@@ -1,7 +1,7 @@
 <template>
     <div class="tag">
         <div class="tag-container">
-            <TagItemBase v-for="elem of values" :text="elem" />
+            <TagItemBase @delete="deteleEmit" v-for="(elem, index) of values" :text="elem" :key="elem" :index="index" />
         </div>
         <input v-model="valueInput" @keyup.enter="pushEmit" class="tag-input" />
     </div>
@@ -14,6 +14,7 @@ import TagItemBase from './tagItemBase/tagItemBase.vue';
 
 export default {
     name: "TagBase",
+    emits: ["value"],
     props: {
         values: {
             type: Object as PropType<string[]>,
@@ -22,7 +23,7 @@ export default {
     },
     components: { TagItemBase },
     setup(props, { emit }) {
-        const  { values } = toRefs(props);
+        const { values } = toRefs(props);
         return {
             ...tagBase(values, emit)
         }
