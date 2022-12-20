@@ -1,3 +1,5 @@
+import { defineAsyncComponent } from 'vue'
+
 const ImagesBase = defineAsyncComponent(() =>
   import('./components/imagesBase/imagesBase.vue')
 )

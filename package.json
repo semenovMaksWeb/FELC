@@ -1,14 +1,10 @@
 {
-  "name": "@felc/components",
+  "name": "felc-components",
   "type": "module",
   "author": "Semenov Maksim",
   "main": "./dist/felc.umd.cjs",
   "module": "./dist/felc.js",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/semenovMaksWeb/FELC"
-},
   "keywords": [
     "vue3",
     "ts",
