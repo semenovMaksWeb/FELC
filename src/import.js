@@ -1,34 +1,15 @@
-import { defineAsyncComponent } from 'vue'
+import Vue from 'vue'
 
-const ImagesBase = defineAsyncComponent(() =>
-  import('./components/imagesBase/imagesBase.vue')
-)
-
-const CheckboxBase = defineAsyncComponent(() =>
-  import('./components/formElement/checkboxBase/checkboxBase.vue')
-)
-
-const InputBase = defineAsyncComponent(() =>
-  import('./components/formElement/inputBase/inputBase.vue')
-)
-
-const LabelBase = defineAsyncComponent(() =>
-  import('./components/formElement/labelBase/labelBase.vue')
-)
-
-const SelectBase = defineAsyncComponent(() =>
-  import('./components/formElement/selectBase/selectBase.vue')
-)
-
-const TagBase = defineAsyncComponent(() =>
-  import('./components/formElement/tagBase/tagBase.vue')
-)
-
-export {
-    ImagesBase,
-    CheckboxBase,
-    InputBase,
-    LabelBase,
-    SelectBase,
-    TagBase
+const components = {
+  ImagesBase: import('./components/imagesBase/imagesBase.vue'),
+  CheckboxBase: import('./components/formElement/checkboxBase/checkboxBase.vue'),
+  InputBase: import('./components/formElement/inputBase/inputBase.vue'),
+  LabelBase: import('./components/formElement/labelBase/labelBase.vue'),
+  SelectBase: import('./components/formElement/selectBase/selectBase.vue'),
+  TagBase: import('./components/formElement/tagBase/tagBase.vue')
 }
+Object.keys(components).forEach(name => {
+  Vue.component(name, components[name])
+})
+
+export default components
