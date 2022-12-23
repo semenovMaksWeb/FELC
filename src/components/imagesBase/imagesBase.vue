@@ -4,20 +4,20 @@
 </template>
 
 <script lang="ts">
-import { ImagesBaseProps } from "./imagesBaseProps";
-import imgBase from "./imgBase/imgBase.vue";
-import SvgBase from "./svgBase/svgBase.vue";
+import { ImagesBaseProps } from './imagesBaseProps'
+import imgBase from './imgBase/imgBase.vue'
+import SvgBase from './svgBase/svgBase.vue'
 
 export default {
-  name: "ImagesBase",
+  name: 'ImagesBase',
   components: { SvgBase, imgBase },
   props: {
     ...ImagesBaseProps,
     type: {
       type: String,
-      default: "img"
+      default: 'img'
     }
-  },
+  }
 }
 </script>
 

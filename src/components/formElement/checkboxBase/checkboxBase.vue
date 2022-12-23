@@ -1,7 +1,7 @@
 <template>
   <input
     :id="id"
-    class="input"
+    class="checkbox"
     v-bind="$attrs"
     v-if="visible"
     :disable="disable"
@@ -15,18 +15,18 @@
 
 <script lang="ts">
 export default {
-  name: "CheckboxBase",
-  props:{
+  name: 'CheckboxBase',
+  props: {
     id: {
       type: String
     },
-    disable:{
+    disable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     visible: {
       type: Boolean,
-      default: true,
+      default: true
     },
     name: {
       type: String
@@ -35,16 +35,16 @@ export default {
       type: Boolean,
       default: false
     },
-    placeholder:{
+    placeholder: {
       type: String
     },
-    tabindex:{
+    tabindex: {
       type: Number
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>

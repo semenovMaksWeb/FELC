@@ -16,18 +16,18 @@
 
 <script lang="ts">
 export default {
-  name: "InputBase",
-  props:{
+  name: 'InputBase',
+  props: {
     id: {
       type: String
     },
-    disable:{
+    disable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     visible: {
       type: Boolean,
-      default: true,
+      default: true
     },
     name: {
       type: String
@@ -36,16 +36,14 @@ export default {
       type: Boolean,
       default: false
     },
-    placeholder:{
+    placeholder: {
       type: String
     },
-    tabindex:{
+    tabindex: {
       type: Number
     }
   }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style lang="scss"></style>

@@ -3,14 +3,12 @@
 </template>
 
 <script lang="ts">
-import { ImagesBaseProps } from "../imagesBaseProps";
+import { ImagesBaseProps } from '../imagesBaseProps'
 
 export default {
-  name: "ImgBase",
-  props: ImagesBaseProps,
+  name: 'ImgBase',
+  props: ImagesBaseProps
 }
 </script>
 
-<style lang="scss">
-@import "imgBase";
-</style>
+<style lang="scss"></style>

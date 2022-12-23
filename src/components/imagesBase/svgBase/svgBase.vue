@@ -5,14 +5,13 @@
 </template>
 
 <script lang="ts">
-import { ImagesBaseProps } from "../imagesBaseProps";
+import { ImagesBaseProps } from '../imagesBaseProps'
 
 export default {
-  name: "SvgBase",
-  props: ImagesBaseProps,
+  name: 'SvgBase',
+  props: ImagesBaseProps
 }
 </script>
 
 <style lang="scss">
-@import "svgBase";
 </style>
