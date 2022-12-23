@@ -1,8 +1,8 @@
 {
   "name": "felc-components",
   "author": "Semenov Maksim",
-  "main": ".dist/felc-components.common.js",
-  "version": "0.0.4",
+  "main": "./dist/felc-components.common.js",
+  "version": "0.0.5",
   "keywords": [
     "vue3",
     "ts",
