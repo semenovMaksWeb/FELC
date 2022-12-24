@@ -1,8 +1,8 @@
 {
   "name": "felc-components",
   "author": "Semenov Maksim",
-  "main": "dist/import.js",
-  "version": "0.0.13",
+  "main": "dist/felc-components.common.js",
+  "version": "0.0.29",
   "keywords": [
     "vue3",
     "ts",
@@ -19,15 +19,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-library": "rollup -c --bundleConfigAsCjs"
+    "build-lib": "vue-cli-service build src/import.js --target lib --name felc-components"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "rollup-plugin-clear": "^2.0.7",
-    "rollup-plugin-typescript2": "^0.34.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "^5.0.0",
@@ -39,12 +37,6 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "rollup": "^3.8.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-scss": "^4.0.0",
-    "rollup-plugin-ts-vue": "^0.5.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "typescript": "^4.5.5"
