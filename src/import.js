@@ -1,15 +1,14 @@
-import Vue from 'vue'
+import components from'./components.js'
 
-const components = {
-  ImagesBase: import('./components/imagesBase/imagesBase.vue'),
-  CheckboxBase: import('./components/formElement/checkboxBase/checkboxBase.vue'),
-  InputBase: import('./components/formElement/inputBase/inputBase.vue'),
-  LabelBase: import('./components/formElement/labelBase/labelBase.vue'),
-  SelectBase: import('./components/formElement/selectBase/selectBase.vue'),
-  TagBase: import('./components/formElement/tagBase/tagBase.vue')
+const plugin = {
+  install (Vue) {
+    for (const prop in components) {
+      if (components.hasOwnProperty(prop)) {
+        const component = components[prop]
+        Vue.component(component.name, component)
+      }
+    }
+  }
 }
-Object.keys(components).forEach(name => {
-  Vue.component(name, components[name])
-})
 
-export default components
+export default plugin

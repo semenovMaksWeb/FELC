@@ -1,1 +1,1 @@
-npm run build && npm publish --access public
+npm run build-library && npm publish --access public
