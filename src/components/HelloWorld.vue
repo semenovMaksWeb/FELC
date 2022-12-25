@@ -1,12 +1,17 @@
 <script  lang="ts">
-import imagesBase from "./imagesBase/imagesBase.vue";
+import ImagesBase from "./imagesBase/imagesBase.vue";
 import InputBase from "./formElement/inputBase/inputBase.vue";
-import { ref }  from "vue";
+import { Ref, ref } from 'vue'
 import CheckboxBase from "./formElement/checkboxBase/checkboxBase.vue";
 import LabelBase from "./formElement/labelBase/labelBase.vue";
+import ButtonBase from '@/components/buttonBase/buttonBase.vue'
 export default {
-  components: { CheckboxBase, InputBase, imagesBase, LabelBase },
+  components: { ButtonBase, CheckboxBase, InputBase, ImagesBase, LabelBase },
   setup(){
+    const arrays :Ref<string[]> = ref([]);
+    const arrayAdd = () => {
+      arrays.value.push("1");
+    }
     const checkbox = ref(false);
     const value = ref("12");
     const valueSet = (el:any) => {
@@ -18,12 +23,25 @@ export default {
     const style = {
       '--images-w': '200px'
     }
+    const styleImagePlus = {
+      '--images-w': '15px'
+    }
+    const styleButton = {
+      "--button-padding": "5px 10px",
+      "--button-bg": "#424bac",
+      "--button-color": "#fff",
+      "--button-border-color": "#424bac"
+    }
     return {
       style,
       value,
       valueSet,
       checkboxSet,
-      checkbox
+      checkbox,
+      arrays,
+      arrayAdd,
+      styleButton,
+      styleImagePlus
     }
   }
 }
@@ -52,7 +70,11 @@ export default {
     <CheckboxBase @input="checkboxSet" :checked="checkbox" :tabindex="3" :name="'гость'"/>
     {{checkbox}}
   </div>
-
+  <ButtonBase :disable="true" @click="arrayAdd" :title="'добавить строчку'" >
+    <span style="margin-right: 5px;">Добавить</span>
+    <ImagesBase :style="styleImagePlus" url="https://cdn-icons-png.flaticon.com/512/1828/1828817.png"/>
+  </ButtonBase>
+  {{ arrays }}
 </template>
 
 <style>
