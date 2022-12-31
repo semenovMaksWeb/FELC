@@ -15,7 +15,7 @@ import { TagContext, TagProps } from '@/components/formElement/tagBase/tagType'
 
 export default {
   name: 'TagBase',
-  emits: ['value'],
+  emits: ['push', 'delete'],
   props: {
     values: {
       type: Object as PropType<string[]>,
